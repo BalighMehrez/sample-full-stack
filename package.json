@@ -16,7 +16,8 @@
     "server:start:debug": "nodemon --config ./src/server/nodemon-debug.json",
     "preserver:start:prod": "rimraf dist/server && npm run server:build",
     "server:start:prod": "node dist/server/main.js",
-    "dev": "concurrently \" ng serve \" \" npm run server:start:debug \" "
+    "dev": "concurrently \" ng serve \" \" npm run server:start:debug \" ",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "graphql-tools": "^4.0.7",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.4",
+    "sqlite3": "^4.1.1",
     "tslib": "^1.10.0",
     "typeorm": "^0.2.24",
     "zone.js": "~0.10.2"

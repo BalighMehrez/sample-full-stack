@@ -1,53 +1,53 @@
-{
-  "compileOnSave": false,
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
-}
 // {
+//   "compileOnSave": false,
 //   "compilerOptions": {
 //     "allowSyntheticDefaultImports": true,
+//     "baseUrl": "./",
+//     "outDir": "./dist/out-tsc",
+//     "sourceMap": true,
+//     "declaration": false,
+//     "downlevelIteration": true,
 //     "emitDecoratorMetadata": true,
 //     "experimentalDecorators": true,
+//     "module": "esnext",
+//     "moduleResolution": "node",
 //     "noImplicitAny": true,
 //     "removeComments": true,
-//     "sourceMap": true,
-//     "target": "es6",
-//     "module": "commonjs",
-//     "moduleResolution": "node",
+//     "importHelpers": true,
+//     "target": "es2015",
 //     "typeRoots": [
 //       "node_modules/@types"
 //     ],
-//     "lib": [ "es2017", "dom" ]
+//     "lib": [
+//       "es2018",
+//       "dom"
+//     ]
 //   },
 //   "exclude": [
 //     "node_modules"
-//   ]
+//   ],
+//   "angularCompilerOptions": {
+//     "fullTemplateTypeCheck": true,
+//     "strictInjectionParameters": true
+//   }
 // }
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [ "es2017", "dom" ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

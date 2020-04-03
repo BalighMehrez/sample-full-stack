@@ -9,13 +9,13 @@ import {
 } from 'typeorm';
 import BookGenre from './book-genre.entity';
 import Author from './author.entity';
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType, ID } from '@nestjs/graphql';
 
 @ObjectType()
 @Entity({name: 'books'})
 export default class Book {
 
-  @Field()
+  @Field(type => ID)
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -37,7 +37,6 @@ export default class Book {
 
   @Field(() => Author)
   author: Author;
-
   // Associations
 
   @ManyToOne(() => Author, author => author.bookConnection, {primary:

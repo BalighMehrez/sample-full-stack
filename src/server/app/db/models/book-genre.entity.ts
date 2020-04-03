@@ -8,13 +8,13 @@ import {
 } from 'typeorm';
 import Genre from './genre.entity';
 import Book from './book.entity';
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ObjectType, ID } from '@nestjs/graphql';
 
 @ObjectType()
-@Entity()
+@Entity({name: 'books_genres'})
 export default class BookGenre {
 
-  @Field()
+  @Field(type => ID)
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -38,10 +38,10 @@ export default class BookGenre {
   @ManyToOne(() => Book, book => book.genreConnection, {primary:
       true})
   @JoinColumn({name: 'book_id'})
-  book: Book[];
+  book: Promise<Book>;
 
   @ManyToOne(() => Genre,  genre => genre.bookConnection, {primary:
       true})
   @JoinColumn({name: 'genre_id'})
-  genre: Genre[];
+  genre: Promise<Genre>;
 }

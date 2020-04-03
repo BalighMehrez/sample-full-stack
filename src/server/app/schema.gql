@@ -1,0 +1,85 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Author {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input AuthorInput {
+  name: String!
+}
+
+type Book {
+  id: ID!
+  title: String!
+  authorId: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  author: Author!
+}
+
+input BookAuthorConnectInput {
+  id: Float!
+}
+
+input BookAuthorInput {
+  connect: BookAuthorConnectInput
+  create: AuthorInput
+}
+
+type BookGenre {
+  id: ID!
+  bookId: Float!
+  genreId: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input BookGenreInput {
+  genreId: Float!
+  bookId: Float!
+}
+
+input BookInput {
+  title: String!
+  author: BookAuthorInput!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Genre {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  book: [Book!]
+}
+
+input GenreInput {
+  name: String!
+}
+
+type Mutation {
+  createAuthor(data: AuthorInput!): Author!
+  createBook(data: BookInput!): Book!
+  createGenre(data: GenreInput!): Genre!
+  createBookGenre(data: BookGenreInput!): BookGenre!
+}
+
+type Query {
+  authors: [Author!]!
+  author(id: Float!): Author
+  books: [Book!]!
+  book(id: Float!): Book
+  genres: [Genre!]!
+  genre(id: Float!): Genre
+  bookGenres: [BookGenre!]!
+  bookGenre(id: Float!): BookGenre!
+}

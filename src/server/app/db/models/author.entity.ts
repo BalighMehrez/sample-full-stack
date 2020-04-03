@@ -1,19 +1,12 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Field, ObjectType, ID } from '@nestjs/graphql';
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import Book from './book.entity';
-import { Field, ObjectType } from 'type-graphql';
 
 @ObjectType()
-@Entity()
+@Entity({name: 'authors'})
 export default class Author {
 
-  @Field()
+  @Field(type => ID)
   @PrimaryGeneratedColumn()
   id: number;
 

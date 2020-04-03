@@ -8,7 +8,7 @@ export class AppService {
 
   }
 
-  async getHello(): Promise<string> { // querying database
-     return `Total books are ${await this.repoService.bookRepo.count()}`;
+  async getHello(): Promise<string> {
+    return `Total books are ${await this.repoService.bookRepo.count()}`;
   }
 }
